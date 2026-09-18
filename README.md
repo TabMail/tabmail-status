@@ -10,14 +10,15 @@ publish the site to GitHub Pages. No server, no third-party account.
 
 ## How to read it
 
-Each service has two entries:
+Each service has two entries, listed together:
 
-- **reachability** — its own `/health` endpoint, probed directly. This stays
+- **`<service>`** — its own `/health` endpoint, probed directly. This stays
   accurate even if TabMail's edge provider is down.
-- **quality** — a summary of the service's error rate over the last fifteen
-  minutes, published by the TabMail backend. _Degraded_ means an elevated
-  error rate; an outage here means most requests are failing even though the
-  service answers.
+- **`<service> · error rate`** — a summary of the service's error rate over the
+  last fifteen minutes, published by the TabMail backend. _Degraded_ means an
+  elevated error rate; an outage here means most requests are failing even
+  though the service answers. Auth is an external provider and has no error-rate
+  entry.
 
 ## Repository conventions
 
