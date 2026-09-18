@@ -48,6 +48,18 @@ sites:
     url: https://api.tabmail.ai/status/public/push
     __dangerous__body_degraded: '"ok":false'
 
+# GitHub deprioritises high-frequency schedules that fire on :00-aligned minutes
+# (observed 2026-09-18: one Uptime run in 8 h against */5). Off-minute crons are
+# the standard mitigation. Response times are only committed by the
+# response-time job, so the graphs need it more often than the daily default.
+workflowSchedule:
+  uptime: "2-57/5 * * * *"
+  responseTime: "17,47 * * * *"
+  summary: "7 * * * *"
+  graphs: "23 0 * * *"
+  staticSite: "37 1 * * *"
+  updateTemplate: "11 0 * * *"
+
 status-website:
   cname: status.tabmail.ai
   # Branding mirrors tabmail-site: same wordmark, favicons, palette (palette.css)
