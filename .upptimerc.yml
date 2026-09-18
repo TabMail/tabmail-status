@@ -7,10 +7,11 @@ repo: tabmail-status
 #  - "… reachability": the service's own /health, probed directly from GitHub
 #    Actions. Independent of anything inside TabMail's infrastructure.
 #  - "… quality": the backend's public status route, which summarises error
-#    rates over the last 15 minutes. HTTP 503 = outage. Anything other than
-#    an explicit "operational" body — "degraded", or "unknown" when the
-#    summary is stale — is recorded as degraded, so a stalled summary can
-#    never show green.
+#    rates over the last 15 minutes. HTTP 503 = outage (down). A 200 whose
+#    body carries "ok":false — "degraded", or "unknown" when the summary is
+#    stale — is recorded as degraded, so a stalled summary can never show
+#    green. (body_degraded, not *_if_text_missing: the latter also overrides
+#    a 503 to degraded — see upptime/uptime-monitor src/update.ts.)
 sites:
   # --- reachability -------------------------------------------------------
   - name: API reachability
@@ -31,22 +32,22 @@ sites:
   # --- service quality ----------------------------------------------------
   - name: API quality
     url: https://api.tabmail.ai/status/public/api
-    __dangerous__body_degraded_if_text_missing: '"status":"operational"'
+    __dangerous__body_degraded: '"ok":false'
   - name: Usage quality
     url: https://api.tabmail.ai/status/public/usage
-    __dangerous__body_degraded_if_text_missing: '"status":"operational"'
+    __dangerous__body_degraded: '"ok":false'
   - name: Templates quality
     url: https://api.tabmail.ai/status/public/templates
-    __dangerous__body_degraded_if_text_missing: '"status":"operational"'
+    __dangerous__body_degraded: '"ok":false'
   - name: Billing quality
     url: https://api.tabmail.ai/status/public/billing
-    __dangerous__body_degraded_if_text_missing: '"status":"operational"'
+    __dangerous__body_degraded: '"ok":false'
   - name: Device Sync quality
     url: https://api.tabmail.ai/status/public/sync
-    __dangerous__body_degraded_if_text_missing: '"status":"operational"'
+    __dangerous__body_degraded: '"ok":false'
   - name: Push quality
     url: https://api.tabmail.ai/status/public/push
-    __dangerous__body_degraded_if_text_missing: '"status":"operational"'
+    __dangerous__body_degraded: '"ok":false'
 
 status-website:
   cname: status.tabmail.ai
