@@ -20,6 +20,10 @@ sites:
     url: https://usage.tabmail.ai/health
   - name: Auth reachability
     url: https://auth.tabmail.ai/auth/v1/health
+    # The Supabase gateway requires the anon (public client) key; this is the
+    # same literal the public iOS app ships, so it is not a secret.
+    headers:
+      - "apikey: sb_publishable_1mtT87g-94P0yxFgM19Itw_P3ih9PUD"
   - name: Templates reachability
     url: https://templates.tabmail.ai/health
   - name: Billing reachability
