@@ -15,7 +15,7 @@ Each service has two entries:
 - **reachability** — its own `/health` endpoint, probed directly. This stays
   accurate even if TabMail's edge provider is down.
 - **quality** — a summary of the service's error rate over the last fifteen
-  minutes, published by the TabMail backend. *Degraded* means an elevated
+  minutes, published by the TabMail backend. _Degraded_ means an elevated
   error rate; an outage here means most requests are failing even though the
   service answers.
 
