@@ -22,9 +22,9 @@
     "url": "https://api.tabmail.ai/status/public/api",
     "icon": "https://icons.duckduckgo.com/ip3/api.tabmail.ai.ico",
     "slug": "api-error-rate",
-    "status": "up",
+    "status": "degraded",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -33,7 +33,9 @@
     "timeWeek": 194,
     "timeMonth": 194,
     "timeYear": 194,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-09-21": 0
+    }
   },
   {
     "name": "Auth",
