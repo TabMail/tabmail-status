@@ -223,19 +223,19 @@
     "url": "https://api.tabmail.ai/status/public/push",
     "icon": "https://icons.duckduckgo.com/ip3/api.tabmail.ai.ico",
     "slug": "push-error-rate",
-    "status": "degraded",
-    "uptime": "99.94%",
-    "uptimeDay": "99.08%",
-    "uptimeWeek": "99.87%",
-    "uptimeMonth": "99.94%",
-    "uptimeYear": "99.94%",
+    "status": "up",
+    "uptime": "99.93%",
+    "uptimeDay": "98.97%",
+    "uptimeWeek": "99.85%",
+    "uptimeMonth": "99.93%",
+    "uptimeYear": "99.93%",
     "time": 96,
     "timeDay": 81,
     "timeWeek": 99,
     "timeMonth": 96,
     "timeYear": 96,
     "dailyMinutesDown": {
-      "2026-10-04": 13
+      "2026-10-04": 15
     }
   }
 ]
